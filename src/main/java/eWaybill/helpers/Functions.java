@@ -1,8 +1,8 @@
 package eWaybill.helpers;
 
 import com.google.common.base.CharMatcher;
-import org.apache.commons.codec.binary.Base64;
 import eWaybill.base.Configurations;
+import org.apache.commons.codec.binary.Base64;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -245,5 +245,11 @@ public class Functions extends Configurations {
         }
         String saltStr = salt.toString();
         return saltStr;
+    }
+
+    public void clickOnElementUsingActionsClass(WebElement element) {
+
+        Actions builder = new Actions(driver);
+        builder.moveToElement(element).click().build().perform();
     }
 }
