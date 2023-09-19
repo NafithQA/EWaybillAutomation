@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Registration Suite" skipfailedinvocationcounts="true" preserve-order="true">
+
+    <listeners>
+        <listener class-name="eWaybill.helpers.ExtentReporterNG"/>
+        <listener class-name="eWaybill.helpers.Listeners"/>
+    </listeners>
+
+    <test name="Subscriptions Regression Test" preserve-order="true">
+        <classes>
+            <class name="eWaybill.RegistrationTests"/>
+        </classes>
+    </test>
+</suite>

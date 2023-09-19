@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Registration Suite]" guice-stage="DEVELOPMENT" skipfailedinvocationcounts="true" verbose="0">
+  <listeners>
+    <listener class-name="eWaybill.helpers.ExtentReporterNG"/>
+    <listener class-name="eWaybill.helpers.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Subscriptions Regression Test(failed)" verbose="0">
+    <classes>
+      <class name="eWaybill.RegistrationTests">
+        <methods>
+          <include name="testTearDown"/>
+          <include name="freightForwarderRoleRegistration"/>
+          <include name="testSetup"/>
+        </methods>
+      </class> <!-- eWaybill.RegistrationTests -->
+    </classes>
+  </test> <!-- Subscriptions Regression Test(failed) -->
+</suite> <!-- Failed suite [Registration Suite] -->
