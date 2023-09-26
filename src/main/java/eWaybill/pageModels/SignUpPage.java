@@ -33,8 +33,56 @@ public class SignUpPage {
     @FindBy(xpath = "//*[text()='Freight Forwarder']")
     private WebElement freightForwarderOption;
 
-    @FindBy(xpath = "//input[@type='file']")
-    private WebElement browseFileButton;
+    @FindBy(xpath = "(//input[@type='file'])[1]")
+    private WebElement firstAttachmentButton;
+
+    @FindBy(xpath = "(//input[@type='file'])[2]")
+    private WebElement secondAttachmentButton;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    private WebElement nextButton;
+
+    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[1]")
+    private WebElement countryDropDown;
+
+    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[2]")
+    private WebElement governorateDropDown;
+
+    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[3]")
+    private WebElement countryCodeDropDown;
+
+    @FindBy(xpath = "//*[text()='Oman']")
+    private WebElement omanOption;
+
+    @FindBy(xpath = "//*[text()='Muscat']")
+    private WebElement muscatOption;
+
+    @FindBy(xpath = "//*[text()='Passport']")
+    private WebElement passportOption;
+
+    @FindBy(name = "address")
+    private WebElement addressField;
+
+    @FindBy(name = "companyTelephoneNo")
+    private WebElement companyTelephoneNoField;
+
+    @FindBy(name = "fullName")
+    private WebElement fullNameField;
+
+    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[1]")
+    private WebElement userNationalityDropDown;
+
+    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[2]")
+    private WebElement idDocumentTypeDropDown;
+
+    @FindBy(name = "idDocumentNo")
+    private WebElement idDocumentNoField;
+
+    @FindBy(name = "authorizedManagerMobileNo")
+    private WebElement authorizedManagerMobileNoField;
+
+    @FindBy(name = "email")
+    private WebElement emailField;
 
     public void fillInCommercialNameInArabicField(String text) {
 
@@ -64,8 +112,87 @@ public class SignUpPage {
         freightForwarderOption.click();
     }
 
-    public void clickOnCompanyRegistrationCertificateBrowseFileButton() {
-        Actions builder = new Actions(driver);
-        builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
+    public WebElement getFirstAttachmentButton() {
+        return firstAttachmentButton;
+    }
+
+    public WebElement getSecondAttachmentButton() {
+        return secondAttachmentButton;
+    }
+
+    public void clickOnNextButton() {
+        functions.waitForElementToBeClickable(nextButton);
+        nextButton.click();
+    }
+
+    public void clickOnCountryDropDown() {
+        functions.waitForElementToBeClickable(countryDropDown);
+        countryDropDown.click();
+    }
+
+    public void clickOnOmanOption() throws InterruptedException {
+        functions.waitForElementToBeClickable(omanOption);
+        omanOption.click();
+    }
+
+    public void clickOnGovernorateDropDown() {
+        functions.waitForElementToBeClickable(governorateDropDown);
+        governorateDropDown.click();
+    }
+
+    public void clickOnMuscatOption() {
+        functions.waitForElementToBeClickable(muscatOption);
+        muscatOption.click();
+    }
+
+    public void fillInAddressField(String text) {
+
+        functions.waitForElementToBeClickable(addressField);
+        addressField.sendKeys(text);
+    }
+
+    public void fillInCompanyTelephoneNoField(String text) {
+
+        functions.waitForElementToBeClickable(companyTelephoneNoField);
+        companyTelephoneNoField.sendKeys(text);
+    }
+
+    public void fillInFullNameField(String text) {
+
+        functions.waitForElementToBeClickable(fullNameField);
+        fullNameField.sendKeys(text);
+    }
+
+    public void clickOnUserNationalityDropDown() {
+        functions.waitForElementToBeClickable(userNationalityDropDown);
+        userNationalityDropDown.click();
+    }
+
+    public void clickOnIdDocumentTypeDropDown() {
+        functions.waitForElementToBeClickable(idDocumentTypeDropDown);
+        idDocumentTypeDropDown.click();
+    }
+
+    public void clickOnPassportOption() {
+        functions.waitForElementToBeClickable(passportOption);
+        passportOption.click();
+    }
+
+    public void fillInIdDocumentNoField(String text) {
+
+        functions.waitForElementToBeClickable(idDocumentNoField);
+        idDocumentNoField.sendKeys(text);
+    }
+
+    public void fillInAuthorizedManagerMobileNoField(String text) {
+
+        functions.waitForElementToBeClickable(authorizedManagerMobileNoField);
+        authorizedManagerMobileNoField.sendKeys(text);
+    }
+
+    public void fillInEmailField(String text) {
+
+        functions.waitForElementToBeClickable(emailField);
+        emailField.sendKeys(text);
     }
 }
