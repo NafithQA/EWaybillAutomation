@@ -252,4 +252,8 @@ public class Functions extends Configurations {
         Actions builder = new Actions(driver);
         builder.moveToElement(element).click().build().perform();
     }
-}
+
+    public void uploadAttachment(WebElement element, String filePath){
+
+        element.sendKeys(filePath);
+    }}
