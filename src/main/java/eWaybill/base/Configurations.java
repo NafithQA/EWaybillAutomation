@@ -21,7 +21,7 @@ public class Configurations {
 
     @Parameters({"browser"})
     @BeforeMethod()
-    public void testSetup(String browserName, Method method) throws IOException, InterruptedException {
+    public void testSetup(String browserName, Method method) {
 
         // Browser Setup
         if (browserName.equalsIgnoreCase("Chrome")) {

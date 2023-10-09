@@ -84,6 +84,16 @@ public class SignUpPage {
     @FindBy(name = "email")
     private WebElement emailField;
 
+    @FindBy(name = "verificationCode")
+    private WebElement verificationCodeField;
+
+    @FindBy(name = "confirmPassword")
+    private WebElement confirmPasswordField;
+
+    @FindBy(name = "newPassword")
+    private WebElement newPasswordField;
+
+
     public void fillInCommercialNameInArabicField(String text) {
 
         functions.waitForElementToBeClickable(commercialNameInArabicField);
@@ -194,5 +204,23 @@ public class SignUpPage {
 
         functions.waitForElementToBeClickable(emailField);
         emailField.sendKeys(text);
+    }
+
+    public void fillInVerificationCodeField(String text) {
+
+        functions.waitForElementToBeClickable(verificationCodeField);
+        verificationCodeField.sendKeys(text);
+    }
+
+    public void fillInNewPasswordField(String text) {
+
+        functions.waitForElementToBeClickable(newPasswordField);
+        newPasswordField.sendKeys(text);
+    }
+
+    public void fillInConfirmPasswordField(String text) {
+
+        functions.waitForElementToBeClickable(confirmPasswordField);
+        confirmPasswordField.sendKeys(text);
     }
 }
