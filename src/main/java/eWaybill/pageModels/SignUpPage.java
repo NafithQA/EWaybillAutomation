@@ -33,6 +33,15 @@ public class SignUpPage {
     @FindBy(xpath = "//*[text()='Freight Forwarder']")
     private WebElement freightForwarderOption;
 
+    @FindBy(xpath = "//*[text()='Clearing Agent']")
+    private WebElement clearingAgentOption;
+
+    @FindBy(xpath = "//*[text()='Trucking Company']")
+    private WebElement truckingCompanyOption;
+
+    @FindBy(xpath = "//*[text()='Trucking Broker']")
+    private WebElement truckingBrokerOption;
+
     @FindBy(xpath = "(//input[@type='file'])[1]")
     private WebElement firstAttachmentButton;
 
@@ -120,6 +129,21 @@ public class SignUpPage {
     public void clickOnFreightForwarderOption() {
         functions.waitForElementToBeClickable(freightForwarderOption);
         freightForwarderOption.click();
+    }
+
+    public void clickOnClearingAgentOption() {
+        functions.waitForElementToBeClickable(clearingAgentOption);
+        clearingAgentOption.click();
+    }
+
+    public void clickOnTruckingCompanyOption() {
+        functions.waitForElementToBeClickable(truckingCompanyOption);
+        truckingCompanyOption.click();
+    }
+
+    public void clickOnTruckingBrokerOption() {
+        functions.waitForElementToBeClickable(truckingBrokerOption);
+        truckingBrokerOption.click();
     }
 
     public WebElement getFirstAttachmentButton() {

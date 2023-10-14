@@ -13,7 +13,7 @@ public class DatabaseHandler {
         ArrayList<String> testData = databaseHandler.getOTPFromDataBase("\t\n" +
                 "SELECT [OTPCode]\n" +
                 "  FROM [security_master_qa].[dbo].[OTPMessages]\n" +
-                "  Where PhoneNumber='+9682323232345'");
+                "  Where PhoneNumber='+9682825558647'");
     }
 
     public ArrayList<String> getOTPFromDataBase(String query) {
