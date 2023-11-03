@@ -64,72 +64,6 @@
                         </configuration>
                     </plugin>
 
-<!--                    <plugin>-->
-
-<!--                        <groupId>ch.fortysix</groupId>-->
-<!--                        <artifactId>maven-postman-plugin</artifactId>-->
-<!--                        <version>0.1.6</version>-->
-<!--                        <executions>-->
-<!--                            <execution>-->
-<!--                                <id>Report Generation</id>-->
-<!--                                <phase>test</phase>-->
-<!--                                <goals>-->
-<!--                                    <goal>send-mail</goal>-->
-<!--                                </goals>-->
-<!--                                <inherited>true</inherited>-->
-<!--                                <configuration>-->
-<!--                                    &lt;!&ndash; From Email address &ndash;&gt;-->
-<!--                                    <from>automation@nafith.com</from>-->
-<!--                                    &lt;!&ndash; Email subject &ndash;&gt;-->
-<!--                                    <subject>Test Automation Report</subject>-->
-<!--                                    &lt;!&ndash; Fail the build if the mail doesn't reach &ndash;&gt;-->
-<!--                                    <failonerror>false</failonerror>-->
-<!--                                    &lt;!&ndash; Email Body Content &ndash;&gt;-->
-<!--                                    <htmlMessage>-->
-<!--                                        <![CDATA[-->
-<!--                                    <p>New test build triggered!</p>-->
-<!--                                    <p>Attached html file contains the test result status of Nafith Automation Run</p>-->
-<!--                                    ]]>-->
-<!--                                    </htmlMessage>-->
-<!--                                    &lt;!&ndash; host &ndash;&gt;-->
-<!--                                    <mailhost>smtp.gmail.com</mailhost>-->
-<!--                                    &lt;!&ndash; port of the host &ndash;&gt;-->
-<!--                                    <mailport>465</mailport>-->
-<!--                                    <mailssl>true</mailssl>-->
-<!--                                    <mailAltConfig>true</mailAltConfig>-->
-<!--                                    &lt;!&ndash; Email Authentication(Username and Password) &ndash;&gt;-->
-<!--                                    <mailuser>automation@nafith.com</mailuser>-->
-<!--                                    <mailpassword>Automation-1234</mailpassword>-->
-<!--                                    <receivers>-->
-<!--                                        &lt;!&ndash; To Email address &ndash;&gt;-->
-<!--                                        <receiver>emoqbel@nafith.com</receiver>-->
-<!--                                        &lt;!&ndash;										<receiver>aalhadi@nafith.com</receiver>&ndash;&gt;-->
-<!--                                    </receivers>-->
-<!--                                    <fileSets>-->
-<!--                                        <fileSet>-->
-<!--                                            &lt;!&ndash; Report directory Path &ndash;&gt;-->
-<!--                                            <directory>${basedir}/test-output/ExtentReports/</directory>-->
-<!--                                            <includes>-->
-<!--                                                &lt;!&ndash; Report file name &ndash;&gt;-->
-<!--                                                <include>NafithAutomationReport.html</include>-->
-<!--                                            </includes>-->
-<!--                                        </fileSet>-->
-
-<!--                                        <fileSet>-->
-<!--                                            &lt;!&ndash; Screenshots directory Path &ndash;&gt;-->
-<!--                                            <directory>${basedir}/test-output/FailuresScreenshots/</directory>-->
-<!--                                            <includes>-->
-<!--                                                &lt;!&ndash; Screenshot file name &ndash;&gt;-->
-<!--                                                <include>*.jpg</include>-->
-<!--                                            </includes>-->
-<!--                                        </fileSet>-->
-
-<!--                                    </fileSets>-->
-<!--                                </configuration>-->
-<!--                            </execution>-->
-<!--                        </executions>-->
-<!--                    </plugin>-->
-
                 </plugins>
             </build>
         </profile>
@@ -146,7 +80,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.5</version>
+            <version>7.7.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -172,7 +106,7 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.6</version>
+            <version>2.7</version>
         </dependency>
 
         <dependency>
@@ -341,7 +275,7 @@
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
-            <version>1.13.1</version>
+            <version>1.15.3</version>
         </dependency>
 
         <dependency>
