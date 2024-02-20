@@ -51,13 +51,13 @@ public class SignUpPage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement nextButton;
 
-    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[1]")
+    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[3]")
     private WebElement countryDropDown;
 
-    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[2]")
+    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[4]")
     private WebElement governorateDropDown;
 
-    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[3]")
+    @FindBy(xpath = "(//div[@class='select__input-container css-136ehom'])[2]")
     private WebElement countryCodeDropDown;
 
     @FindBy(xpath = "//*[text()='Oman']")

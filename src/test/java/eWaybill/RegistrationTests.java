@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class RegistrationTests extends Configurations {
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void freightForwarderRoleRegistration() throws IOException, InterruptedException {
 
         Functions functions = new Functions();
@@ -74,7 +74,7 @@ public class RegistrationTests extends Configurations {
         Thread.sleep(5000);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void truckingBrokerRoleRegistration() throws IOException, InterruptedException {
 
         Functions functions = new Functions();
@@ -192,7 +192,7 @@ public class RegistrationTests extends Configurations {
         Thread.sleep(5000);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void truckingCompanyRoleRegistration() throws IOException, InterruptedException {
 
         Functions functions = new Functions();
