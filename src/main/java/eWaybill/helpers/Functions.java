@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -235,11 +236,23 @@ public class Functions extends Configurations {
         return saltStr;
     }
 
-    public String getRandomName() {
+    public String getRandomNameEN() {
         String RansomName = "yuioasdfghjklzxcvbnm";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
-        while (salt.length() < 6) { // length of the random string.
+        while (salt.length() < 9) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * RansomName.length());
+            salt.append(RansomName.charAt(index));
+        }
+        String saltStr = salt.toString();
+        return saltStr;
+    }
+
+    public String getRandomNameِAR() {
+        String RansomName = "حتايلاىةلاسيتاشلهثصقكمخنتبسخبهنسحخبهن";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 9) { // length of the random string.
             int index = (int) (rnd.nextFloat() * RansomName.length());
             salt.append(RansomName.charAt(index));
         }
@@ -256,4 +269,41 @@ public class Functions extends Configurations {
     public void uploadAttachment(WebElement element, String filePath){
 
         element.sendKeys(filePath);
-    }}
+    }
+    public String generateRandomPassword() {
+        // ASCII range – alphanumeric (0-9, a-z, A-Z)
+        final String capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        final String smallLetters = "abcdefghijklmnopqrstuvwxyz";
+        final String numbers = "0123456789";
+        final String specialChars = "!@#$%^&*()_-+=[]{}|;:,.<>?";
+
+        SecureRandom random = new SecureRandom();
+        StringBuilder sb = new StringBuilder();
+
+        // each iteration of the loop randomly chooses a character from the given
+        // ASCII range and appends it to the `StringBuilder` instance
+
+        for (int i = 0; i < 3; i++) {
+            int randomIndex = random.nextInt(capitalLetters.length());
+            sb.append(capitalLetters.charAt(randomIndex));
+        }
+
+        for (int i = 0; i < 3; i++) {
+            int randomIndex = random.nextInt(smallLetters.length());
+            sb.append(smallLetters.charAt(randomIndex));
+        }
+
+        for (int i = 0; i < 3; i++) {
+            int randomIndex = random.nextInt(numbers.length());
+            sb.append(numbers.charAt(randomIndex));
+        }
+
+        for (int i = 0; i < 3; i++) {
+            int randomIndex = random.nextInt(specialChars.length());
+            sb.append(specialChars.charAt(randomIndex));
+        }
+
+        return sb.toString();
+    }
+
+}

@@ -9,7 +9,11 @@
 
     <test name="Subscriptions Regression Test" preserve-order="true">
         <classes>
-            <class name="eWaybill.RegistrationTests"/>
+<!--            <class name="eWaybill.RegistrationTests"/>-->
+            <class name="RegistrationTests.clearingAgentRoleTests"/>
+            <class name="RegistrationTests.truckingCompanyRoleTests"/>
+            <class name="RegistrationTests.ownerRoleTests"/>
+
         </classes>
     </test>
 </suite>

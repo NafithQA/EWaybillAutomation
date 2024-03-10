@@ -61,6 +61,7 @@ public class RegistrationTests extends Configurations {
         signUpPage.clickOnNextButton();
         Thread.sleep(5000);
         System.out.println(randomAuthorizedManagerPhoneNumber);
+<<<<<<< Updated upstream
         ArrayList<String> testData = databaseHandler.getOTPFromDataBase(OtherQueries.otpCodeQuery(randomAuthorizedManagerPhoneNumber));
         String otpCode = testData.get(0);
         signUpPage.fillInVerificationCodeField(otpCode);
@@ -70,6 +71,17 @@ public class RegistrationTests extends Configurations {
         signUpPage.fillInNewPasswordField(randomPassword);
         signUpPage.fillInConfirmPasswordField(randomPassword);
         signUpPage.clickOnNextButton();
+=======
+      //  ArrayList<String> testData = databaseHandler.getOTPFromDataBase(OtherQueries.otpCodeQuery(randomAuthorizedManagerPhoneNumber));
+      //  String otpCode = testData.get(0);
+       // signUpPage.fillInVerificationCodeField(otpCode);
+       // signUpPage.clickOnNextButton();
+
+//        String randomPassword = PasswordGenerator.generateRandomPassword(10);
+//        signUpPage.fillInNewPasswordField(randomPassword);
+//        signUpPage.fillInConfirmPasswordField(randomPassword);
+//        signUpPage.clickOnNextButton();
+>>>>>>> Stashed changes
 
         Thread.sleep(5000);
     }
@@ -120,6 +132,7 @@ public class RegistrationTests extends Configurations {
         signUpPage.clickOnNextButton();
         Thread.sleep(5000);
         System.out.println(randomAuthorizedManagerPhoneNumber);
+<<<<<<< Updated upstream
         ArrayList<String> testData = databaseHandler.getOTPFromDataBase(OtherQueries.otpCodeQuery(randomAuthorizedManagerPhoneNumber));
         String otpCode = testData.get(0);
         signUpPage.fillInVerificationCodeField(otpCode);
@@ -129,6 +142,17 @@ public class RegistrationTests extends Configurations {
         signUpPage.fillInNewPasswordField(randomPassword);
         signUpPage.fillInConfirmPasswordField(randomPassword);
         signUpPage.clickOnNextButton();
+=======
+//        ArrayList<String> testData = databaseHandler.getOTPFromDataBase(OtherQueries.otpCodeQuery(randomAuthorizedManagerPhoneNumber));
+//        String otpCode = testData.get(0);
+//        signUpPage.fillInVerificationCodeField(otpCode);
+//        signUpPage.clickOnNextButton();
+//
+//        String randomPassword = PasswordGenerator.generateRandomPassword(10);
+//        signUpPage.fillInNewPasswordField(randomPassword);
+//        signUpPage.fillInConfirmPasswordField(randomPassword);
+//        signUpPage.clickOnNextButton();
+>>>>>>> Stashed changes
 
         Thread.sleep(5000);
     }
@@ -179,6 +203,7 @@ public class RegistrationTests extends Configurations {
         signUpPage.clickOnNextButton();
         Thread.sleep(5000);
         System.out.println(randomAuthorizedManagerPhoneNumber);
+<<<<<<< Updated upstream
         ArrayList<String> testData = databaseHandler.getOTPFromDataBase(OtherQueries.otpCodeQuery(randomAuthorizedManagerPhoneNumber));
         String otpCode = testData.get(0);
         signUpPage.fillInVerificationCodeField(otpCode);
@@ -190,6 +215,19 @@ public class RegistrationTests extends Configurations {
         signUpPage.clickOnNextButton();
 
         Thread.sleep(5000);
+=======
+//       ArrayList<String> testData = databaseHandler.getOTPFromDataBase(OtherQueries.otpCodeQuery(randomAuthorizedManagerPhoneNumber));
+//       String otpCode = testData.get(0);
+//       signUpPage.fillInVerificationCodeField(otpCode);
+//        signUpPage.clickOnNextButton();
+//
+//        String randomPassword = PasswordGenerator.generateRandomPassword(10);
+//       signUpPage.fillInNewPasswordField(randomPassword);
+//      signUpPage.fillInConfirmPasswordField(randomPassword);
+//       signUpPage.clickOnNextButton();
+//
+//       Thread.sleep(5000);
+>>>>>>> Stashed changes
     }
 
     @Test(enabled = false)
@@ -238,6 +276,7 @@ public class RegistrationTests extends Configurations {
         signUpPage.clickOnNextButton();
         Thread.sleep(5000);
         System.out.println(randomAuthorizedManagerPhoneNumber);
+<<<<<<< Updated upstream
         ArrayList<String> testData = databaseHandler.getOTPFromDataBase(OtherQueries.otpCodeQuery(randomAuthorizedManagerPhoneNumber));
         String otpCode = testData.get(0);
         signUpPage.fillInVerificationCodeField(otpCode);
@@ -247,6 +286,17 @@ public class RegistrationTests extends Configurations {
         signUpPage.fillInNewPasswordField(randomPassword);
         signUpPage.fillInConfirmPasswordField(randomPassword);
         signUpPage.clickOnNextButton();
+=======
+//        ArrayList<String> testData = databaseHandler.getOTPFromDataBase(OtherQueries.otpCodeQuery(randomAuthorizedManagerPhoneNumber));
+//        String otpCode = testData.get(0);
+//        signUpPage.fillInVerificationCodeField(otpCode);
+//        signUpPage.clickOnNextButton();
+//
+//        String randomPassword = PasswordGenerator.generateRandomPassword(10);
+//        signUpPage.fillInNewPasswordField(randomPassword);
+//        signUpPage.fillInConfirmPasswordField(randomPassword);
+//        signUpPage.clickOnNextButton();
+>>>>>>> Stashed changes
 
         Thread.sleep(5000);
     }

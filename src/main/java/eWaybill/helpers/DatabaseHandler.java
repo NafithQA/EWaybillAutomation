@@ -1,5 +1,7 @@
 package eWaybill.helpers;
 
+import eWaybill.helpers.Queries.OtherQueries;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,11 +11,16 @@ public class DatabaseHandler {
     public static void main(String[] args) {
 
         DatabaseHandler databaseHandler = new DatabaseHandler();
+<<<<<<< Updated upstream
 
         ArrayList<String> testData = databaseHandler.getOTPFromDataBase("\t\n" +
                 "SELECT [OTPCode]\n" +
                 "  FROM [security_master_qa].[dbo].[OTPMessages]\n" +
                 "  Where PhoneNumber='+9682825558647'");
+=======
+         ArrayList<String> testData = databaseHandler.getOTPFromDataBase(OtherQueries.otpCodeQuery);
+        System.out.println(testData.get(0));
+>>>>>>> Stashed changes
     }
 
     public ArrayList<String> getOTPFromDataBase(String query) {
@@ -31,7 +38,11 @@ public class DatabaseHandler {
         ResultSet resultSet = null;
         List<String> returnedResultSet = new ArrayList<String>();
 
+<<<<<<< Updated upstream
         String OtpCode = null;
+=======
+        String OtpNumber = null;
+>>>>>>> Stashed changes
 
         try {
             // Get connection.
@@ -49,14 +60,22 @@ public class DatabaseHandler {
             while (resultSet.next()) {
 
                 // Storing results sets into ArrayLists
+<<<<<<< Updated upstream
                 OtpCode = String.valueOf(receiptsResultSet.add(resultSet.getString("OTPCode")));
+=======
+                OtpNumber = String.valueOf(receiptsResultSet.add(resultSet.getString("OTPCode")));
+>>>>>>> Stashed changes
             }
 
             // Adding all results sets into the main returnedResultSet to be returned to the requester
             returnedResultSet.add(receiptsResultSet.get(0));
 
             // Printing values of results sets
+<<<<<<< Updated upstream
             System.out.println("OTP Code : " + receiptsResultSet.get(0));
+=======
+            System.out.println("A : " + receiptsResultSet.get(0));
+>>>>>>> Stashed changes
 
         } catch (Exception ex) {
             ex.printStackTrace();

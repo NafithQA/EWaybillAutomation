@@ -1,26 +1,26 @@
 package eWaybill.pageModels;
 
 import eWaybill.helpers.Functions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static eWaybill.base.Configurations.driver;
-
-public class SignUpPage {
-
+import java.io.IOException;
+public class StakeholdersRegistrationPage {
     private Functions functions = new Functions();
-
-    public SignUpPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+    public StakeholdersRegistrationPage(WebDriver driver) {    PageFactory.initElements(driver, this);
     }
+    @FindBy(xpath = "//*[text()='Sign up']")
+    private WebElement signUpButton;
+
 
     @FindBy(xpath = "//input[@placeholder='Commercial Name in Arabic']")
     private WebElement commercialNameInArabicField;
-
+    @FindBy(xpath = "//input[@placeholder='Full Name in Arabic']")
+    private WebElement fullNameInArabicField;
+    @FindBy(xpath = "//input[@placeholder='Full Name in English']")
+    private WebElement fullNameInEnglishField;
     @FindBy(xpath = "//input[@placeholder='Commercial Name in English']")
     private WebElement commercialNameInEnglishField;
 
@@ -39,8 +39,8 @@ public class SignUpPage {
     @FindBy(xpath = "//*[text()='Trucking Company']")
     private WebElement truckingCompanyOption;
 
-    @FindBy(xpath = "//*[text()='Trucking Broker']")
-    private WebElement truckingBrokerOption;
+    @FindBy(xpath = "//*[text()='Owner']")
+    private WebElement ownerOption;
 
     @FindBy(xpath = "(//input[@type='file'])[1]")
     private WebElement firstAttachmentButton;
@@ -92,7 +92,6 @@ public class SignUpPage {
 
     @FindBy(name = "email")
     private WebElement emailField;
-
     @FindBy(name = "verificationCode")
     private WebElement verificationCodeField;
 
@@ -101,14 +100,30 @@ public class SignUpPage {
 
     @FindBy(name = "newPassword")
     private WebElement newPasswordField;
+//
+//    @FindBy(xpath = "//button[type='submit']")
+//    private WebElement submitButton;
 
+    public void clickOnSignUpButton() {
 
+        functions.waitForElementToBeClickable(signUpButton);
+        signUpButton.click();
+    }
     public void fillInCommercialNameInArabicField(String text) {
 
         functions.waitForElementToBeClickable(commercialNameInArabicField);
         commercialNameInArabicField.sendKeys(text);
     }
+    public void fillInFullNameInArabicField(String text) {
 
+        functions.waitForElementToBeClickable(fullNameInArabicField);
+        fullNameInArabicField.sendKeys(text);
+    }
+    public void fillInFullNameInEnglishField(String text) {
+
+        functions.waitForElementToBeClickable(fullNameInEnglishField);
+        fullNameInEnglishField.sendKeys(text);
+    }
     public void fillInCommercialNameInEnglishField(String text) {
 
         functions.waitForElementToBeClickable(commercialNameInEnglishField);
@@ -141,9 +156,9 @@ public class SignUpPage {
         truckingCompanyOption.click();
     }
 
-    public void clickOnTruckingBrokerOption() {
-        functions.waitForElementToBeClickable(truckingBrokerOption);
-        truckingBrokerOption.click();
+    public void clickOnOwnerOption() {
+        functions.waitForElementToBeClickable(ownerOption);
+        ownerOption.click();
     }
 
     public WebElement getFirstAttachmentButton() {
@@ -178,7 +193,6 @@ public class SignUpPage {
         functions.waitForElementToBeClickable(muscatOption);
         muscatOption.click();
     }
-
     public void fillInAddressField(String text) {
 
         functions.waitForElementToBeClickable(addressField);
@@ -247,8 +261,7 @@ public class SignUpPage {
         functions.waitForElementToBeClickable(confirmPasswordField);
         confirmPasswordField.sendKeys(text);
     }
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes
+
+
+
