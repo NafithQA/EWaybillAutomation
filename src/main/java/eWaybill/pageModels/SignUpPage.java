@@ -247,8 +247,5 @@ public class SignUpPage {
         functions.waitForElementToBeClickable(confirmPasswordField);
         confirmPasswordField.sendKeys(text);
     }
-<<<<<<< Updated upstream
+
 }
-=======
-}
->>>>>>> Stashed changes
