@@ -23,9 +23,6 @@ public class LoginPage {
     @FindBy(xpath = "//input[@name='password']")
     private WebElement passwordField;
 
-    @FindBy(xpath = "//*[text()='Create eWaybill']")
-    private WebElement createEWayBillButton;
-
     public void clickOnSignUpButton() {
 
         functions.waitForElementToBeClickable(signUpButton);
@@ -42,11 +39,5 @@ public class LoginPage {
 
         functions.waitForElementToBeClickable(passwordField);
         passwordField.sendKeys(password);
-    }
-
-    public void clickOnCreateEWayBillButton() {
-
-        functions.waitForElementToBeClickable(createEWayBillButton);
-        createEWayBillButton.click();
     }
 }

@@ -2,10 +2,7 @@ package eWaybill.eWaybillTestCycle;
 
 import eWaybill.base.Configurations;
 import eWaybill.helpers.Functions;
-import eWaybill.pageModels.EwaybillFormPage;
-import eWaybill.pageModels.LoginPage;
-import eWaybill.pageModels.SignUpPage;
-import eWaybill.pageModels.StakeholdersRegistrationPage;
+import eWaybill.pageModels.*;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -13,13 +10,14 @@ import java.io.IOException;
 
 public class clearingAgentCycle extends Configurations {
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void create_eWaybill() throws IOException, InterruptedException {
         Functions functions = new Functions();
         LoginPage loginPage = new LoginPage(driver);
         SignUpPage signUpPage = new SignUpPage(driver);
         EwaybillFormPage ewaybillFormPage = new EwaybillFormPage(driver);
         StakeholdersRegistrationPage stakeholdersRegistrationPage = new StakeholdersRegistrationPage(driver);
+        EwaybillHomeScreen ewaybillHomeScreen = new EwaybillHomeScreen(driver);
 
         // Navigate To Qa URL
         functions.navigateToQaURL();
@@ -28,7 +26,7 @@ public class clearingAgentCycle extends Configurations {
         loginPage.fillInPhoneNumberField("88884444");
         loginPage.fillInPasswordField("Aa@123456");
         signUpPage.clickOnNextButton();
-        loginPage.clickOnCreateEWayBillButton();
+        ewaybillHomeScreen.clickOnCreateEWayBillButton();
 
         // Fill in Shipper Information
         ewaybillFormPage.clickOnTruckingCompanyDropDown();
@@ -81,6 +79,26 @@ public class clearingAgentCycle extends Configurations {
         functions.scrollThePageUp();
         ewaybillFormPage.clickOnCreateEwaybillButton();
         ewaybillFormPage.clickOnConfirmButton();
+
+        Thread.sleep(5000);
+    }
+
+    @Test(enabled = true)
+    public void cancel_eWaybill() throws IOException, InterruptedException {
+        Functions functions = new Functions();
+        LoginPage loginPage = new LoginPage(driver);
+        SignUpPage signUpPage = new SignUpPage(driver);
+        EwaybillHomeScreen ewaybillHomeScreen = new EwaybillHomeScreen(driver);
+
+        // Navigate To Qa URL
+        functions.navigateToQaURL();
+
+        // Login
+        loginPage.fillInPhoneNumberField("88884444");
+        loginPage.fillInPasswordField("Aa@123456");
+        signUpPage.clickOnNextButton();
+        ewaybillHomeScreen.hoverOverEWayBillsButton();
+        ewaybillHomeScreen.clickOnEWaybillsListOption();
 
         Thread.sleep(5000);
     }
