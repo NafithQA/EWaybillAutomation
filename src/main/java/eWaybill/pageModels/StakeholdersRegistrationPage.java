@@ -48,6 +48,9 @@ public class StakeholdersRegistrationPage {
     @FindBy(xpath = "(//input[@type='file'])[2]")
     private WebElement secondAttachmentButton;
 
+    @FindBy(xpath = "(//input[@type='file'])[3]")
+    private WebElement thirdAttachmentButton;
+
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement nextButton;
 
@@ -167,6 +170,10 @@ public class StakeholdersRegistrationPage {
 
     public WebElement getSecondAttachmentButton() {
         return secondAttachmentButton;
+    }
+
+    public WebElement getThirdAttachmentButton() {
+        return thirdAttachmentButton;
     }
 
     public void clickOnNextButton() {

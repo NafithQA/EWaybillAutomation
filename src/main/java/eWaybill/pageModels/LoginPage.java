@@ -17,9 +17,27 @@ public class LoginPage {
     @FindBy(xpath = "//*[text()='Sign up']")
     private WebElement signUpButton;
 
+    @FindBy(xpath = "//input[@name='mobileNumber']")
+    private WebElement mobileNumberField;
+
+    @FindBy(xpath = "//input[@name='password']")
+    private WebElement passwordField;
+
     public void clickOnSignUpButton() {
 
         functions.waitForElementToBeClickable(signUpButton);
         signUpButton.click();
+    }
+
+    public void fillInPhoneNumberField(String phoneNumber) {
+
+        functions.waitForElementToBeClickable(mobileNumberField);
+        mobileNumberField.sendKeys(phoneNumber);
+    }
+
+    public void fillInPasswordField(String password) {
+
+        functions.waitForElementToBeClickable(passwordField);
+        passwordField.sendKeys(password);
     }
 }

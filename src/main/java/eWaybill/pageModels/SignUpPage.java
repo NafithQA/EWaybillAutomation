@@ -48,6 +48,9 @@ public class SignUpPage {
     @FindBy(xpath = "(//input[@type='file'])[2]")
     private WebElement secondAttachmentButton;
 
+    @FindBy(xpath = "(//input[@type='file'])[3]")
+    private WebElement thirdAttachmentButton;
+
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement nextButton;
 
@@ -147,10 +150,15 @@ public class SignUpPage {
     }
 
     public WebElement getFirstAttachmentButton() {
+        functions.waitForElementToBeClickable(firstAttachmentButton);
         return firstAttachmentButton;
     }
 
     public WebElement getSecondAttachmentButton() {
+        return secondAttachmentButton;
+    }
+
+    public WebElement getThirdAttachmentButton() {
         return secondAttachmentButton;
     }
 
@@ -247,8 +255,5 @@ public class SignUpPage {
         functions.waitForElementToBeClickable(confirmPasswordField);
         confirmPasswordField.sendKeys(text);
     }
-<<<<<<< Updated upstream
+
 }
-=======
-}
->>>>>>> Stashed changes
