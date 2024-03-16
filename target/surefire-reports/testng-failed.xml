@@ -7,13 +7,13 @@
   </listeners>
   <test thread-count="5" name="Subscriptions Regression Test(failed)" verbose="0">
     <classes>
-      <class name="eWaybill.RegistrationTests">
+      <class name="eWaybill.eWaybillTestCycle.clearingAgentCycle">
         <methods>
+          <include name="cancel_eWaybill"/>
           <include name="testTearDown"/>
-          <include name="freightForwarderRoleRegistration"/>
           <include name="testSetup"/>
         </methods>
-      </class> <!-- eWaybill.RegistrationTests -->
+      </class> <!-- eWaybill.eWaybillTestCycle.clearingAgentCycle -->
     </classes>
   </test> <!-- Subscriptions Regression Test(failed) -->
 </suite> <!-- Failed suite [Registration Suite] -->
