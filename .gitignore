@@ -111,3 +111,6 @@ target/surefire-reports/testng-failed.xml
 target/surefire-reports/testng-results.xml
 target/surefire-reports/TestSuite.txt
 target/test-classes/eWaybill/RegistrationTests.class
+test-output/
+target/
+.idea/
