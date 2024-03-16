@@ -1,0 +1,113 @@
+
+.idea/vcs.xml
+registrationTests.xml
+target/classes/eWaybill/base/Configurations.class
+target/classes/eWaybill/helpers/DatabaseHandler.class
+target/classes/eWaybill/helpers/Functions.class
+target/classes/eWaybill/helpers/PasswordGenerator.class
+target/classes/eWaybill/helpers/Queries/OtherQueries.class
+target/classes/eWaybill/pageModels/CommonLocators.class
+target/classes/eWaybill/pageModels/EwaybillFormPage.class
+target/classes/eWaybill/pageModels/EwaybillGridScreen.class
+target/classes/eWaybill/pageModels/EwaybillHomeScreen.class
+target/classes/eWaybill/pageModels/LoginPage.class
+target/classes/eWaybill/pageModels/SignUpPage.class
+target/classes/eWaybill/pageModels/StakeholdersRegistrationPage.class
+target/classes/img1.jpg
+target/classes/img2.jpg
+target/classes/testData/urlsData.properties
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+target/surefire-reports/emailable-report.html
+target/surefire-reports/index.html
+target/surefire-reports/junitreports/TEST-eWaybill.eWaybillTestCycle.clearingAgentCycle.xml
+target/surefire-reports/junitreports/TEST-RegistrationTests.clearingAgentRoleTests.xml
+target/surefire-reports/old/index.html
+target/surefire-reports/old/Registration Suite/classes.html
+target/surefire-reports/old/Registration Suite/methods-alphabetical.html
+target/surefire-reports/old/Registration Suite/methods-not-run.html
+target/surefire-reports/old/Registration Suite/methods.html
+target/surefire-reports/old/Registration Suite/testng.xml.html
+target/surefire-reports/old/Registration Suite/toc.html
+target/surefire-reports/Registration Suite/Subscriptions Regression Test.html
+target/surefire-reports/Registration Suite/Subscriptions Regression Test.xml
+target/surefire-reports/Registration Suite/testng-failed.xml
+target/surefire-reports/TEST-TestSuite.xml
+target/surefire-reports/testng-failed.xml
+target/surefire-reports/testng-results.xml
+target/surefire-reports/TestSuite.txt
+target/test-classes/apiHandler/ApiHandler.class
+target/test-classes/apiHandler/Methods.class
+target/test-classes/commonSteps/StakeholderRegistrationSteps.class
+target/test-classes/eWaybill/eWaybillTestCycle/clearingAgentCycle.class
+target/test-classes/eWaybill/RegistrationTests.class
+target/test-classes/RegistrationTests/clearingAgentRoleTests.class
+target/test-classes/RegistrationTests/ownerRoleTests.class
+target/test-classes/RegistrationTests/truckingCompanyRoleTests.class
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_20_13.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_20_38.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_20_39.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_20_40.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_20_42.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_20_43.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_20_58.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_20_59.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_21_07.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_21_14.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_22_08.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_22_29.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_22_30.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_22_36.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_22_47.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_22_48.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_22_53.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_22_54.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_23_01.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_23_05.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_23_08.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_23_11.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_23_13.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_23_22.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_23_28.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_23_33.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_13_23_35.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_15_15_26.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_15_15_31.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_16_21_09.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_16_21_12.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_16_21_47.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_16_21_49.html
+test-output/ExtentReports/EWaybillAutomationReport_2024_03_16_22_45.html
+test-output/FailedTestsScreenshots/clearing_Agent_Registration1.png
+test-output/FailedTestsScreenshots/create_eWaybill1.png
+registrationTests.xml
+target/classes/eWaybill/base/Configurations.class
+target/classes/eWaybill/helpers/DatabaseHandler.class
+target/classes/eWaybill/helpers/Functions.class
+target/classes/eWaybill/helpers/Queries/OtherQueries.class
+target/classes/eWaybill/pageModels/CommonLocators.class
+target/classes/eWaybill/pageModels/LoginPage.class
+target/classes/testData/urlsData.properties
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+target/surefire-reports/emailable-report.html
+target/surefire-reports/index.html
+target/surefire-reports/old/index.html
+target/surefire-reports/old/Registration Suite/classes.html
+target/surefire-reports/old/Registration Suite/methods-alphabetical.html
+target/surefire-reports/old/Registration Suite/methods-not-run.html
+target/surefire-reports/old/Registration Suite/methods.html
+target/surefire-reports/old/Registration Suite/testng.xml.html
+target/surefire-reports/old/Registration Suite/toc.html
+target/surefire-reports/Registration Suite/Subscriptions Regression Test.html
+target/surefire-reports/Registration Suite/Subscriptions Regression Test.xml
+target/surefire-reports/Registration Suite/testng-failed.xml
+target/surefire-reports/TEST-TestSuite.xml
+target/surefire-reports/testng-failed.xml
+target/surefire-reports/testng-results.xml
+target/surefire-reports/TestSuite.txt
+target/test-classes/eWaybill/RegistrationTests.class

@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Registration_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Registration_Suite" title="eWaybill.RegistrationTests" class="method navigator-link" hash-for-method="freightForwarderRoleRegistration">freightForwarderRoleRegistration</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Registration_Suite" title="eWaybill.eWaybillTestCycle.clearingAgentCycle" class="method navigator-link" hash-for-method="cancel_eWaybill">cancel_eWaybill</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Registration_Suite -->
@@ -122,14 +122,14 @@
           <div class="suite-Registration_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">eWaybill.RegistrationTests</span>
+              <span class="class-name">eWaybill.eWaybillTestCycle.clearingAgentCycle</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="freightForwarderRoleRegistration">
-                  </a> <!-- freightForwarderRoleRegistration -->
-                  <span class="method-name">freightForwarderRoleRegistration</span>
+                  <a name="cancel_eWaybill">
+                  </a> <!-- cancel_eWaybill -->
+                  <span class="method-name">cancel_eWaybill</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -150,7 +150,7 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Subscriptions Regression Test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;eWaybill.RegistrationTests&quot;/&gt;
+      &lt;class name=&quot;eWaybill.eWaybillTestCycle.clearingAgentCycle&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Subscriptions Regression Test --&gt;
 &lt;/suite&gt; &lt;!-- Registration Suite --&gt;
@@ -192,14 +192,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'freightForwarderRoleRegistration')
-data.setCell(0, 2, 'eWaybill.RegistrationTests')
-data.setCell(0, 3, 8013);
+data.setCell(0, 1, 'cancel_eWaybill')
+data.setCell(0, 2, 'eWaybill.eWaybillTestCycle.clearingAgentCycle')
+data.setCell(0, 3, 17248);
 window.suiteTableData['Registration_Suite']= { tableData: data, tableDiv: 'times-div-Registration_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 17 seconds</span>
               <div id="times-div-Registration_Suite">
               </div> <!-- times-div-Registration_Suite -->
             </div> <!-- times-div -->
@@ -214,9 +214,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Registration_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">eWaybill.eWaybillTestCycle.clearingAgentCycle</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">create_eWaybill</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Registration_Suite" class="panel">
@@ -225,18 +232,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">eWaybill.RegistrationTests</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">eWaybill.eWaybillTestCycle.clearingAgentCycle</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">testSetup(edge, public void eWaybill.RegistrationTests.freightForwarderRoleRegistration() throws java.io.IOExc...)</span>
+                <span class="method-name">testSetup(edge, public void eWaybill.eWaybillTestCycle.clearingAgentCycle.cancel_eWaybill() throws java.io.IOE...)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">freightForwarderRoleRegistration</span>
-                <span class="method-start">4716 ms</span>
+                <span class="method-name">cancel_eWaybill</span>
+                <span class="method-start">2171 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">testTearDown</span>
-                <span class="method-start">12729 ms</span>
+                <span class="method-start">19421 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
