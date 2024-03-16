@@ -30,7 +30,7 @@ public class clearingAgentCycle extends Configurations {
         signUpPage.clickOnNextButton();
         loginPage.clickOnCreateEWayBillButton();
 
-        // Fill in Sipper Information
+        // Fill in Shipper Information
         ewaybillFormPage.clickOnTruckingCompanyDropDown();
         ewaybillFormPage.fillInTruckingCompanyDropDown("Shefaa");
         ewaybillFormPage.clickOnShefaaTCOption();
@@ -76,6 +76,8 @@ public class clearingAgentCycle extends Configurations {
                 + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "img2.jpg");
         functions.uploadAttachment(stakeholdersRegistrationPage.getThirdAttachmentButton(), System.getProperty("user.dir")
                 + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "img1.jpg");
+
+        // Confirm eWaybill Creation
         functions.scrollThePageUp();
         ewaybillFormPage.clickOnCreateEwaybillButton();
         ewaybillFormPage.clickOnConfirmButton();
