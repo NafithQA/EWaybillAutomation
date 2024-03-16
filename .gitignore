@@ -114,3 +114,4 @@ target/test-classes/eWaybill/RegistrationTests.class
 test-output/
 target/
 .idea/
+/test-output/ExtentReports/
