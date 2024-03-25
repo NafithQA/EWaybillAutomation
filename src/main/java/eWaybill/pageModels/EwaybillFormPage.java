@@ -68,8 +68,58 @@ public class EwaybillFormPage {
     @FindBy(xpath = "//*[text()='Create eWaybill']")
     private WebElement createEwaybillButton;
 
+    @FindBy(xpath = "//*[text()='Accept eWaybill']")
+    private WebElement acceptEwaybillButton;
+
+    @FindBy(xpath = "//*[text()='Reject eWaybill']")
+    private WebElement rejectEwaybillButton;
+
+    @FindBy(xpath = "//*[text()='Cancel eWaybill']")
+    private WebElement cancelEwaybillButton;
+
     @FindBy(xpath = "//*[text()='Confirm']")
     private WebElement confirmButton;
+
+    // Trucking Company Information
+
+    @FindBy(xpath = "//input[@aria-label='Vehicle Nationality']")
+    private WebElement vehicleNationalityDropDown;
+
+    @FindBy(xpath = "//input[@aria-label='Vehicle Class']")
+    private WebElement vehicleClassDropDown;
+
+    @FindBy(xpath = "//*[text()='Heavy Truck']")
+    private WebElement heavyTruckOption;
+
+    @FindBy(xpath = "(//input[@aria-label='Code'])[1]")
+    private WebElement truckPlateNumberCodeDropDown;
+
+    @FindBy(xpath = "//*[text()='A']")
+    private WebElement firstPlateCodeOption;
+
+    @FindBy(xpath = "//input[@name='truckPlateNumber']")
+    private WebElement truckPlateNumberField;
+
+    @FindBy(xpath = "(//input[@aria-label='Code'])[2]")
+    private WebElement trailerPlateNumberCodeDropDown;
+
+    @FindBy(xpath = "//input[@name='trailerPlateNumber']")
+    private WebElement trailerPlateNumberField;
+
+    @FindBy(xpath = "//input[@aria-label='Trailer Type']")
+    private WebElement trailerTypeDropDown;
+
+    @FindBy(xpath = "//input[@aria-label='Driver Nationality']")
+    private WebElement driverNationalityDropDown;
+
+    @FindBy(xpath = "//input[@name='driverName']")
+    private WebElement driverNameField;
+
+    @FindBy(xpath = "//input[@aria-label='Dial Code']")
+    private WebElement countryCodeDropDown;
+
+    @FindBy(xpath = "//input[@name='driverMobileNumber']")
+    private WebElement driverMobileNumberField;
 
     public void clickOnTruckingCompanyDropDown() {
 
@@ -207,5 +257,119 @@ public class EwaybillFormPage {
 
         functions.waitForElementToBeClickable(confirmButton);
         confirmButton.click();
+    }
+
+    public void clickOnVehicleNationalityDropDown() {
+
+        functions.waitForElementToBeClickable(vehicleNationalityDropDown);
+        vehicleNationalityDropDown.click();
+    }
+
+    public void fillInVehicleNationalityDropDown(String vehicleNationality) {
+
+        functions.waitForElementToBeClickable(vehicleNationalityDropDown);
+        vehicleNationalityDropDown.sendKeys(vehicleNationality);
+    }
+
+    public void clickOnVehicleClassDropDown() {
+
+        functions.waitForElementToBeClickable(vehicleClassDropDown);
+        vehicleClassDropDown.click();
+    }
+
+    public void fillInVehicleClassDropDown(String vehicleClass) {
+
+        functions.waitForElementToBeClickable(vehicleClassDropDown);
+        vehicleClassDropDown.sendKeys(vehicleClass);
+    }
+
+    public void clickOnHeavyTruckOption() {
+
+        functions.waitForElementToBeClickable(heavyTruckOption);
+        heavyTruckOption.click();
+    }
+
+    public void clickOnTruckPlateCodeDropDown() {
+
+        functions.waitForElementToBeClickable(truckPlateNumberCodeDropDown);
+        truckPlateNumberCodeDropDown.click();
+    }
+
+    public void fillInTruckPlateCodeDropDown(String truckPlateCode) {
+
+        functions.waitForElementToBeClickable(truckPlateNumberCodeDropDown);
+        truckPlateNumberCodeDropDown.sendKeys(truckPlateCode);
+    }
+
+    public void clickOnFirstPlateCodeOption() {
+
+        functions.waitForElementToBeClickable(firstPlateCodeOption);
+        firstPlateCodeOption.click();
+    }
+
+    public void fillInTruckPlateNumberField(String truckPlateNumber) {
+
+        functions.waitForElementToBeClickable(truckPlateNumberField);
+        truckPlateNumberField.sendKeys(truckPlateNumber);
+    }
+
+    public void clickOnTrailerPlateCodeDropDown() {
+
+        functions.waitForElementToBeClickable(trailerPlateNumberCodeDropDown);
+        trailerPlateNumberCodeDropDown.click();
+    }
+
+    public void fillInTrailerPlateCodeDropDown(String trailerPlateCode) {
+
+        functions.waitForElementToBeClickable(trailerPlateNumberCodeDropDown);
+        trailerPlateNumberCodeDropDown.sendKeys(trailerPlateCode);
+    }
+
+    public void fillInTrailerPlateNumberField(String trailerPlateNumber) {
+
+        functions.waitForElementToBeClickable(trailerPlateNumberField);
+        trailerPlateNumberField.sendKeys(trailerPlateNumber);
+    }
+
+    public void clickOnTrailerTypeDropDown() {
+
+        functions.waitForElementToBeClickable(trailerTypeDropDown);
+        trailerTypeDropDown.click();
+    }
+
+    public void fillInTrailerTypeDropDown(String trailerType) {
+
+        functions.waitForElementToBeClickable(trailerTypeDropDown);
+        trailerTypeDropDown.sendKeys(trailerType);
+    }
+
+    public void fillInDriverNameField(String driverName) {
+
+        functions.waitForElementToBeClickable(driverNameField);
+        driverNameField.sendKeys(driverName);
+    }
+
+    public void fillInDriverMobileNumberField(String driverMobileNumber) {
+
+        functions.waitForElementToBeClickable(driverMobileNumberField);
+        driverMobileNumberField.sendKeys(driverMobileNumber);
+    }
+
+    public void clickOnAcceptEwaybillButton() {
+
+        functions.waitForElementToBeClickable(acceptEwaybillButton);
+        acceptEwaybillButton.click();
+    }
+
+    public void clickOnRejectEwaybillButton() {
+
+        functions.waitForElementToBeClickable(rejectEwaybillButton);
+        rejectEwaybillButton.click();
+    }
+
+    public void clickOnCancelEwaybillButton() {
+
+        functions.waitForElementToBeClickable(cancelEwaybillButton);
+        cancelEwaybillButton.click();
     }
 }
