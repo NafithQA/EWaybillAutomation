@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.security.SecureRandom;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 import java.util.Random;
 
@@ -33,14 +34,14 @@ public class Functions extends Configurations {
     // This function waits for an element until it is clickable
     public void waitForElementToBeClickable(WebElement element) {
 
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     // This function waits for an element until it is visible
     public void waitForElementToBeVisible(WebElement element) {
 
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -144,7 +145,7 @@ public class Functions extends Configurations {
     // This function Waits for the page until it is fully loaded
     public void waitForPageToLoad() {
 
-        new WebDriverWait(driver, 30).until(
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 

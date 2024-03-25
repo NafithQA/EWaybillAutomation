@@ -34,4 +34,9 @@ public class EwaybillListScreen {
         functions.waitForElementToBeClickable(viewFirstEwaybillButton);
         viewFirstEwaybillButton.click();
     }
+
+    public WebElement getUnderReviewLabel(){
+
+        return underReviewLabel;
+    }
 }

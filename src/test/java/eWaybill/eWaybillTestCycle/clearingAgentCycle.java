@@ -108,12 +108,19 @@ public class clearingAgentCycle extends Configurations {
         ewaybillHomeScreen.hoverOverEWayBillsButton();
         ewaybillHomeScreen.clickOnEWaybillsListOption();
         Thread.sleep(2000);
-        ewaybillListScreen.clickOnStatusSortButton();
-        ewaybillListScreen.clickOnStatusSortButton();
 
-        // Navigate to First "Under Review" EWaybill
-        ewaybillListScreen.clickViewFirstEwaybillButton();
-        commonLocators.clickOnContinueButton();
+        for (int i = 0; i < 3; i++) {
+            try {
+                if (ewaybillListScreen.getUnderReviewLabel().isDisplayed() == true) {
+                    ewaybillListScreen.clickViewFirstEwaybillButton();
+                    break;
+                }
+            } catch (Exception e) {
+                System.out.println("Element is not in page " + i);
+                ewaybillListScreen.clickOnStatusSortButton();
+                Thread.sleep(1000);
+            }
+        }
 
         // Fill in Trucking Company Information's
         ewaybillFormPage.clickOnVehicleClassDropDown();
