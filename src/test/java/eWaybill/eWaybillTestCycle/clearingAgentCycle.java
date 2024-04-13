@@ -14,7 +14,7 @@ import java.util.List;
 
 public class clearingAgentCycle extends Configurations {
 
-    @Test(enabled = true, priority = 0)
+    @Test(enabled = false, priority = 0)
     public void create_eWaybill() throws IOException, InterruptedException {
         Functions functions = new Functions();
         LoginPage loginPage = new LoginPage(driver);
@@ -87,7 +87,7 @@ public class clearingAgentCycle extends Configurations {
         Thread.sleep(3000);
     }
 
-    @Test(enabled = true, priority = 1)
+    @Test(enabled = false, priority = 1)
     public void accept_eWaybill() throws IOException, InterruptedException {
         Functions functions = new Functions();
         LoginPage loginPage = new LoginPage(driver);
@@ -154,7 +154,7 @@ public class clearingAgentCycle extends Configurations {
         Thread.sleep(3000);
     }
 
-    @Test(enabled = true, priority = 2)
+    @Test(enabled = false, priority = 2)
     public void reject_eWaybill() throws IOException, InterruptedException {
         Functions functions = new Functions();
         LoginPage loginPage = new LoginPage(driver);
@@ -189,7 +189,7 @@ public class clearingAgentCycle extends Configurations {
         Thread.sleep(3000);
     }
 
-    @Test(enabled = true, priority = 3)
+    @Test(enabled = false, priority = 3)
     public void cancel_eWaybill() throws IOException, InterruptedException {
         Functions functions = new Functions();
         LoginPage loginPage = new LoginPage(driver);
@@ -218,6 +218,40 @@ public class clearingAgentCycle extends Configurations {
         functions.scrollThePageUp();
         ewaybillFormPage.clickOnCancelEwaybillButton();
         ewaybillFormPage.clickOnConfirmButton();
+
+        Thread.sleep(3000);
+    }
+
+    @Test(enabled = true, priority = 3)
+    public void confirm_eWaybill() throws IOException, InterruptedException {
+        Functions functions = new Functions();
+        LoginPage loginPage = new LoginPage(driver);
+        SignUpPage signUpPage = new SignUpPage(driver);
+        EwaybillFormPage ewaybillFormPage = new EwaybillFormPage(driver);
+        EwaybillHomeScreen ewaybillHomeScreen = new EwaybillHomeScreen(driver);
+
+        // Create eWaybill through Create API
+        String eWaybillId = ApiHandler.createEwaybill();
+
+        // Accept eWaybill through Accept API
+        ApiHandler.acceptEwaybill(eWaybillId);
+
+        // Navigate To Qa URL
+        functions.navigateToQaURL();
+
+        // Login as Clearing Agent
+        loginPage.fillInPhoneNumberField(dataLoader.credentialsData("clearingAgentUSer"));
+        loginPage.fillInPasswordField(dataLoader.credentialsData("commonLoginPassword"));
+        signUpPage.clickOnNextButton();
+
+        // Navigate to EWaybills List & Sort
+        ewaybillHomeScreen.hoverOverEWayBillsButton();
+        ewaybillHomeScreen.clickOnEWaybillsListOption();
+        Thread.sleep(5000);
+
+        // Search for an eWaybill with its status as "Active"
+        clearingAgentCycle.findEwaybillWithSpecificStatus("Pending Approval");
+
 
         Thread.sleep(3000);
     }
