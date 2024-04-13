@@ -1,13 +1,16 @@
 package eWaybill.eWaybillTestCycle;
 
+import apiHandler.ApiHandler;
 import eWaybill.base.Configurations;
-import eWaybill.helpers.DataLoader;
 import eWaybill.helpers.Functions;
 import eWaybill.pageModels.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class clearingAgentCycle extends Configurations {
 
@@ -24,8 +27,8 @@ public class clearingAgentCycle extends Configurations {
         functions.navigateToQaURL();
 
         // Login as Clearing Agent
-        loginPage.fillInPhoneNumberField("88884444");
-        loginPage.fillInPasswordField("Aa@123456");
+        loginPage.fillInPhoneNumberField(dataLoader.credentialsData("clearingAgentUSer"));
+        loginPage.fillInPasswordField(dataLoader.credentialsData("commonLoginPassword"));
         signUpPage.clickOnNextButton();
         ewaybillHomeScreen.clickOnCreateEWayBillButton();
 
@@ -84,43 +87,35 @@ public class clearingAgentCycle extends Configurations {
         Thread.sleep(3000);
     }
 
-    @Test(enabled = false, priority = 1)
+    @Test(enabled = true, priority = 1)
     public void accept_eWaybill() throws IOException, InterruptedException {
         Functions functions = new Functions();
         LoginPage loginPage = new LoginPage(driver);
         SignUpPage signUpPage = new SignUpPage(driver);
         EwaybillHomeScreen ewaybillHomeScreen = new EwaybillHomeScreen(driver);
-        EwaybillListScreen ewaybillListScreen = new EwaybillListScreen(driver);
         EwaybillFormPage ewaybillFormPage = new EwaybillFormPage(driver);
         StakeholdersRegistrationPage stakeholdersRegistrationPage = new StakeholdersRegistrationPage(driver);
         CommonLocators commonLocators = new CommonLocators(driver);
-        DataLoader dataLoader = new DataLoader();
+
+        // Create eWaybill through API
+        ApiHandler.createEwaybill();
 
         // Navigate To Qa URL
         functions.navigateToQaURL();
 
         // Login as Trucking Company
-        loginPage.fillInPhoneNumberField(dataLoader.credentialsData("truckingCompanyUser"));
+        loginPage.fillInPhoneNumberField(dataLoader.credentialsData("truckingCompanyUser1"));
         loginPage.fillInPasswordField(dataLoader.credentialsData("commonLoginPassword"));
         signUpPage.clickOnNextButton();
 
         // Navigate to EWaybills List & Sort
         ewaybillHomeScreen.hoverOverEWayBillsButton();
         ewaybillHomeScreen.clickOnEWaybillsListOption();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
-        for (int i = 0; i < 3; i++) {
-            try {
-                if (ewaybillListScreen.getUnderReviewLabel().isDisplayed() == true) {
-                    ewaybillListScreen.clickViewFirstEwaybillButton();
-                    break;
-                }
-            } catch (Exception e) {
-                System.out.println("Element is not in page " + i);
-                ewaybillListScreen.clickOnStatusSortButton();
-                Thread.sleep(1000);
-            }
-        }
+        // Search for an eWaybill with its status as "Under Review"
+        clearingAgentCycle.findEwaybillWithSpecificStatus("Under Review");
+        commonLocators.clickOnContinueButton();
 
         // Fill in Trucking Company Information's
         ewaybillFormPage.clickOnVehicleClassDropDown();
@@ -159,33 +154,32 @@ public class clearingAgentCycle extends Configurations {
         Thread.sleep(3000);
     }
 
-    @Test(enabled = false, priority = 2)
+    @Test(enabled = true, priority = 2)
     public void reject_eWaybill() throws IOException, InterruptedException {
         Functions functions = new Functions();
         LoginPage loginPage = new LoginPage(driver);
         SignUpPage signUpPage = new SignUpPage(driver);
         EwaybillHomeScreen ewaybillHomeScreen = new EwaybillHomeScreen(driver);
-        EwaybillListScreen ewaybillListScreen = new EwaybillListScreen(driver);
         EwaybillFormPage ewaybillFormPage = new EwaybillFormPage(driver);
-        DataLoader dataLoader = new DataLoader();
+
+        // Create eWaybill through API
+        ApiHandler.createEwaybill();
 
         // Navigate To Qa URL
         functions.navigateToQaURL();
 
         // Login as Trucking Company
-        loginPage.fillInPhoneNumberField(dataLoader.credentialsData("truckingCompanyUser"));
+        loginPage.fillInPhoneNumberField(dataLoader.credentialsData("truckingCompanyUser1"));
         loginPage.fillInPasswordField(dataLoader.credentialsData("commonLoginPassword"));
         signUpPage.clickOnNextButton();
 
         // Navigate to EWaybills List & Sort
         ewaybillHomeScreen.hoverOverEWayBillsButton();
         ewaybillHomeScreen.clickOnEWaybillsListOption();
-        Thread.sleep(2000);
-        ewaybillListScreen.clickOnStatusSortButton();
-        ewaybillListScreen.clickOnStatusSortButton();
+        Thread.sleep(5000);
 
-        // Navigate to First "Under Review" EWaybill
-        ewaybillListScreen.clickViewFirstEwaybillButton();
+        // Search for an eWaybill with its status as "Under Review"
+        clearingAgentCycle.findEwaybillWithSpecificStatus("Under Review");
 
         // Accept eWaybill Creation
         functions.scrollThePageUp();
@@ -195,32 +189,30 @@ public class clearingAgentCycle extends Configurations {
         Thread.sleep(3000);
     }
 
-    @Test(enabled = false, priority = 3)
+    @Test(enabled = true, priority = 3)
     public void cancel_eWaybill() throws IOException, InterruptedException {
         Functions functions = new Functions();
         LoginPage loginPage = new LoginPage(driver);
         SignUpPage signUpPage = new SignUpPage(driver);
         EwaybillFormPage ewaybillFormPage = new EwaybillFormPage(driver);
         EwaybillHomeScreen ewaybillHomeScreen = new EwaybillHomeScreen(driver);
-        EwaybillListScreen ewaybillListScreen = new EwaybillListScreen(driver);
 
         // Navigate To Qa URL
         functions.navigateToQaURL();
 
         // Login as Clearing Agent
-        loginPage.fillInPhoneNumberField("88884444");
-        loginPage.fillInPasswordField("Aa@123456");
+        loginPage.fillInPhoneNumberField(dataLoader.credentialsData("clearingAgentUSer"));
+        loginPage.fillInPasswordField(dataLoader.credentialsData("commonLoginPassword"));
         signUpPage.clickOnNextButton();
 
+        
         // Navigate to EWaybills List & Sort
         ewaybillHomeScreen.hoverOverEWayBillsButton();
         ewaybillHomeScreen.clickOnEWaybillsListOption();
-        Thread.sleep(2000);
-        ewaybillListScreen.clickOnStatusSortButton();
-        ewaybillListScreen.clickOnStatusSortButton();
+        Thread.sleep(5000);
 
-        // Navigate to First "Under Review" EWaybill
-        ewaybillListScreen.clickViewFirstEwaybillButton();
+        // Search for an eWaybill with its status as "Active"
+        clearingAgentCycle.findEwaybillWithSpecificStatus("Active");
 
         // Accept eWaybill Creation
         functions.scrollThePageUp();
@@ -228,5 +220,25 @@ public class clearingAgentCycle extends Configurations {
         ewaybillFormPage.clickOnConfirmButton();
 
         Thread.sleep(3000);
+    }
+
+    public static void findEwaybillWithSpecificStatus(String elementText) throws InterruptedException {
+        EwaybillListScreen ewaybillListScreen = new EwaybillListScreen(driver);
+
+        // Loop through "Status" Column Cells to Find the Cell Index of "Under Review" Status
+        List<WebElement> eWaybillStatusColumnElements = driver.findElements(By.xpath("//td[7]"));
+        outerLoop:
+        for (int sortCount = 0; sortCount < 5; sortCount++) {
+            ewaybillListScreen.clickOnStatusSortButton();
+            Thread.sleep(3000);
+            for (int i = 0; i < eWaybillStatusColumnElements.size(); i++) {
+                System.out.println("Element in cell " + i + " is " + eWaybillStatusColumnElements.get(i).getText());
+                if (eWaybillStatusColumnElements.get(i).getText().equalsIgnoreCase(elementText)) {
+                    i++;
+                    driver.findElement(By.xpath("(//span[@title='View eWaybill'])[" + i + "]")).click();
+                    break outerLoop;
+                }
+            }
+        }
     }
 }
