@@ -4,12 +4,13 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 import java.io.File;
-import java.io.IOException;
 
 public class ApiHandler {
 
-    public static void main(String[] args) throws IOException {
-        createEwaybill();
+    public static void main(String[] args) throws InterruptedException {
+        String eWaybillId = createEwaybill();
+        Thread.sleep(3000);
+        acceptEwaybill(eWaybillId);
     }
 
     public static void truckingCompanyLogin() {
@@ -29,7 +30,7 @@ public class ApiHandler {
         System.out.println("Response Body: " + responseBody);
     }
 
-    public static void createEwaybill() throws IOException {
+    public static String createEwaybill() {
         String endpoint = "http://192.168.6.196/gateway/EWaybill";
         String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiJlN2MwYjkwZi0wNjk4LTQ0N2UtOWUxZC1hYmJkMTBhZmZhZGEiLCJ1bmlxdWVfbmFtZSI6IlBvc3RtYW5SdW50aW1lLzcuMzYuMyIsIm5iZiI6MTcxMTQ0MjIyMywiZXhwIjoyMDI2OTc1MDIzLCJpYXQiOjE3MTE0NDIyMjN9.lw5jC7hGGdh8OHPVWlYg6AbCkfu-H1xA4bj7oRUcZ3w";
 
@@ -76,7 +77,48 @@ public class ApiHandler {
         int statusCode = response.getStatusCode();
         System.out.println("Create eWaybill API Status Code: " + statusCode);
 
+        String eWaybillId = response.jsonPath().getString("result.id");
+        System.out.println("Created eWaybill ID is : " + eWaybillId);
+
         String responseBody = response.getBody().asString();
         System.out.println("Create eWaybill API Response Body: " + responseBody);
+        return eWaybillId;
+    }
+
+    public static void acceptEwaybill(String id) {
+        String endpoint = "http://192.168.6.196/gateway/EWaybill/Accept";
+        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiJlN2MwYjkwZi0wNjk4LTQ0N2UtOWUxZC1hYmJkMTBhZmZhZGEiLCJ1bmlxdWVfbmFtZSI6IlBvc3RtYW5SdW50aW1lLzcuMzYuMyIsIm5iZiI6MTcxMTQ0MjIyMywiZXhwIjoyMDI2OTc1MDIzLCJpYXQiOjE3MTE0NDIyMjN9.lw5jC7hGGdh8OHPVWlYg6AbCkfu-H1xA4bj7oRUcZ3w";
+
+        Response response = RestAssured.given()
+                .header("Authorization", "Bearer " + token)
+                .formParam("Id", id)
+                .formParam("VehicleNationality", "oman")
+                .formParam("VehicleClass", "Heavy Truck")
+                .formParam("TruckPlateNumber", "1234")
+                .formParam("TruckPlateCode", "AA")
+                .formParam("TrailerType", "Heavy")
+                .formParam("TrailerPlateNumber", "5698")
+                .formParam("TrailerPlateCode", "Nothing")
+                .formParam("DriverNationality", "oman")
+                .formParam("DriverName", "Nothing")
+                .formParam("DriverMobileNumber", "700800900")
+                .formParam("TransportationFeesMethod", "Visa")
+                .formParam("LoadingDelayDemurrage", "10JD")
+                .formParam("LoadingLocationDemurrage", "10JD")
+                .formParam("DischargeDelayDemurrage", "10JD")
+                .formParam("DischargeLocationDemurrage", "10JD")
+                .formParam("Price", "156")
+                .formParam("Currency", "152")
+                .formParam("PaymentMethod", "369")
+                .formParam("DownPayment", "123")
+                .formParam("Notes", "Nothing")
+                .formParam("DriverAreaCode", "962")
+                .put(endpoint);
+
+        int statusCode = response.getStatusCode();
+        System.out.println("Accept eWaybill API Status Code: " + statusCode);
+
+        String responseBody = response.getBody().asString();
+        System.out.println("Accept eWaybill API Response Body: " + responseBody);
     }
 }
