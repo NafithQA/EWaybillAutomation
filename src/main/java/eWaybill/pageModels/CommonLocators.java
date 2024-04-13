@@ -16,5 +16,21 @@ public class CommonLocators {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(xpath = "//*[text()='Continue']")
+    private WebElement continueButton;
 
+    @FindBy(xpath = "//button[@type='submit']")
+    private WebElement nextButton;
+
+    public void clickOnContinueButton() {
+
+        functions.waitForElementToBeClickable(continueButton);
+        continueButton.click();
+    }
+
+    public void clickOnNextButton() {
+
+        functions.waitForElementToBeClickable(nextButton);
+        nextButton.click();
+    }
 }
