@@ -17,6 +17,9 @@ public class EwaybillListScreen {
     @FindBy(xpath = "(//*[text()='Under Review'])[1]")
     private WebElement underReviewLabel;
 
+    @FindBy(xpath = "(//*[text()='Active'])[1]")
+    private WebElement activeLabel;
+
     @FindBy(xpath = "(//span[@title='View eWaybill'])[1]")
     private WebElement viewFirstEwaybillButton;
 
@@ -38,5 +41,10 @@ public class EwaybillListScreen {
     public WebElement getUnderReviewLabel(){
 
         return underReviewLabel;
+    }
+
+    public WebElement getActiveLabel(){
+
+        return activeLabel;
     }
 }
